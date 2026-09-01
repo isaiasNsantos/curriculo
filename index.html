@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Isaias Nogueira Santos - Currículo</title>
+    <style>
+        /* ===== RESET ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #eef2f7;
+            font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            padding: 40px 20px;
+            color: #1a2634;
+        }
+
+        .container {
+            max-width: 1050px;
+            width: 100%;
+            background: #ffffff;
+            border-radius: 18px;
+            box-shadow: 0 12px 50px rgba(0, 0, 0, 0.10);
+            padding: 44px 50px;
+        }
+
+        /* ===== TIPOGRAFIA ===== */
+        h1 {
+            font-size: 34px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            color: #0b1a2b;
+        }
+
+        h2 {
+            font-size: 17px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            color: #1a3a5c;
+            border-bottom: 3px solid #1a3a5c;
+            padding-bottom: 6px;
+            margin-top: 30px;
+            margin-bottom: 16px;
+        }
+
+        h3 {
+            font-size: 16px;
+            font-weight: 700;
+            color: #0b1a2b;
+            margin-top: 14px;
+            margin-bottom: 2px;
+        }
+
+        p,
+        li {
+            font-size: 14.5px;
+            line-height: 1.7;
+            color: #1e2a3a;
+        }
+
+        a {
+            color: #1a3a5c;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* ===== CABEÇALHO ===== */
+        .header {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: baseline;
+            border-bottom: 2px solid #dce3ed;
+            padding-bottom: 16px;
+            margin-bottom: 8px;
+        }
+
+        .header-left .nome {
+            font-size: 36px;
+            font-weight: 700;
+            color: #0b1a2b;
+        }
+
+        .header-left .titulo {
+            font-size: 17px;
+            font-weight: 400;
+            color: #2a4a6e;
+            margin-top: 2px;
+        }
+
+        .header-right {
+            text-align: right;
+            font-size: 14px;
+            line-height: 1.8;
+            color: #1e2a3a;
+        }
+
+        .header-right .icone {
+            margin-right: 6px;
+            opacity: 0.7;
+        }
+
+        .badge-rpa {
+            display: inline-block;
+            background: #1a3a5c;
+            color: #fff;
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            padding: 4px 16px;
+            border-radius: 20px;
+            margin-top: 6px;
+        }
+
+        /* ===== COMPETÊNCIAS ===== */
+        .competencias-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px 36px;
+            background: #f5f8fc;
+            padding: 18px 22px;
+            border-radius: 12px;
+            margin-bottom: 6px;
+        }
+
+        .competencias-grid .grupo strong {
+            display: block;
+            font-size: 13.5px;
+            color: #1a3a5c;
+            margin-bottom: 3px;
+        }
+
+        .competencias-grid .grupo ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .competencias-grid .grupo ul li {
+            font-size: 13.5px;
+            line-height: 1.7;
+            padding-left: 16px;
+            position: relative;
+        }
+
+        .competencias-grid .grupo ul li::before {
+            content: "▹";
+            position: absolute;
+            left: 0;
+            color: #1a3a5c;
+            font-weight: 700;
+        }
+
+        /* ===== EXPERIÊNCIA ===== */
+        .experiencia-item {
+            margin-bottom: 22px;
+        }
+
+        .experiencia-item .cabecalho {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: baseline;
+        }
+
+        .experiencia-item .empresa {
+            font-weight: 700;
+            font-size: 16px;
+            color: #0b1a2b;
+        }
+
+        .experiencia-item .cargo {
+            font-weight: 600;
+            color: #1a3a5c;
+            font-size: 15px;
+        }
+
+        .experiencia-item .periodo {
+            font-size: 13px;
+            color: #4a5f7a;
+            font-weight: 500;
+        }
+
+        .experiencia-item ul {
+            list-style: none;
+            padding-left: 0;
+            margin-top: 4px;
+        }
+
+        .experiencia-item ul li {
+            font-size: 14px;
+            line-height: 1.7;
+            padding-left: 18px;
+            position: relative;
+            margin-bottom: 2px;
+        }
+
+        .experiencia-item ul li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #1a3a5c;
+            font-weight: 700;
+        }
+
+        .destaque-rpa {
+            background: #e9eff7;
+            padding: 8px 16px;
+            border-radius: 6px;
+            margin-top: 6px;
+            font-size: 13.5px;
+            border-left: 4px solid #1a3a5c;
+        }
+
+        /* ===== PROJETOS ===== */
+        .projetos-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 18px 30px;
+            background: #f5f8fc;
+            padding: 20px 22px;
+            border-radius: 12px;
+        }
+
+        .projetos-grid .projeto-item strong {
+            display: block;
+            font-size: 14.5px;
+            color: #0b1a2b;
+            margin-bottom: 2px;
+        }
+
+        .projetos-grid .projeto-item p {
+            font-size: 13.5px;
+            line-height: 1.6;
+            margin: 4px 0 2px 0;
+        }
+
+        .projetos-grid .projeto-item .tech {
+            font-size: 12px;
+            color: #1a3a5c;
+            font-weight: 600;
+            margin-top: 2px;
+        }
+
+        .projetos-grid .projeto-item .link-git {
+            font-size: 13px;
+            margin-top: 4px;
+        }
+
+        /* ===== FORMAÇÃO ===== */
+        .formacao-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2px 30px;
+        }
+
+        .formacao-grid .bloco {
+            margin-bottom: 4px;
+        }
+
+        .formacao-grid .bloco strong {
+            display: block;
+            font-size: 13.5px;
+            color: #1a3a5c;
+            margin-top: 6px;
+        }
+
+        .formacao-grid .bloco ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .formacao-grid .bloco ul li {
+            font-size: 13.5px;
+            line-height: 1.7;
+            padding-left: 16px;
+            position: relative;
+        }
+
+        .formacao-grid .bloco ul li::before {
+            content: "▹";
+            position: absolute;
+            left: 0;
+            color: #1a3a5c;
+            font-weight: 700;
+        }
+
+        .curso-tag {
+            display: inline-block;
+            background: #e3eaf3;
+            font-size: 11px;
+            font-weight: 600;
+            color: #1a3a5c;
+            padding: 1px 12px;
+            border-radius: 12px;
+            margin-left: 6px;
+        }
+
+        /* ===== RESPONSIVO ===== */
+        @media (max-width: 768px) {
+            .container {
+                padding: 24px 18px;
+            }
+
+            .header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .header-right {
+                text-align: left;
+                margin-top: 10px;
+            }
+
+            .competencias-grid,
+            .formacao-grid,
+            .projetos-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media print {
+            body {
+                background: #fff;
+                padding: 0;
+            }
+
+            .container {
+                box-shadow: none;
+                border-radius: 0;
+                padding: 30px 38px;
+            }
+
+            .badge-rpa {
+                background: #1a3a5c !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+
+            .competencias-grid,
+            .projetos-grid,
+            .destaque-rpa {
+                background: #f5f8fc !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+
+        <!-- ============================================================ -->
+        <!-- CABEÇALHO -->
+        <!-- ============================================================ -->
+        <div class="header">
+            <div class="header-left">
+                <div class="nome">Isaias Nogueira Santos</div>
+                <div class="titulo">Desenvolvedor Python · Back-end e Automação</div>
+                <span class="badge-rpa">▶ RPA com Python</span>
+            </div>
+            <div class="header-right">
+                <div><span class="icone">📍</span> Pacajus – CE</div>
+                <div><span class="icone">📱</span> (85) 98856-1847 / (85) 98217-8470</div>
+                <div><span class="icone">✉</span> <a href="mailto:i.nsantos@outlook.com">i.nsantos@outlook.com</a></div>
+                <div><span class="icone">🪪</span> Habilitação: A/B</div>
+                <div><span class="icone">🐙</span> <a href="https://github.com/isaiasNsantos" target="_blank">github.com/isaiasNsantos</a></div>
+            </div>
+        </div>
+
+        <!-- ============================================================ -->
+        <!-- SOBRE -->
+        <!-- ============================================================ -->
+        <h2>▶ Sobre</h2>
+        <p>
+            Sou um cara que gosta de resolver problemas com código. Trabalho com
+            <strong>Python</strong> no dia a dia, principalmente na parte de
+            <strong>back-end</strong> e <strong>automação de processos</strong>.
+        </p>
+        <p style="margin-top: 6px;">
+            Já desenvolvi alguns sistemas completos – do planejamento à entrega –
+            que ajudaram a agilizar tarefas manuais na empresa onde estou atuando.
+        </p>
+        <p style="margin-top: 6px;">
+            Tenho projetos reais em produção que automatizam fluxos logísticos,
+            reservas, controle de avarias e gestão de inventário, com atuação na
+            camada de negócio e banco de dados.
+        </p>
+        <p style="margin-top: 6px;">
+            Uso IA como ferramenta de apoio para acelerar o trabalho, principalmente
+            no front-end, já que meu foco mesmo é o back-end.
+        </p>
+
+        <!-- ============================================================ -->
+        <!-- COMPETÊNCIAS -->
+        <!-- ============================================================ -->
+        <h2>▶ No que me viro bem</h2>
+        <div class="competencias-grid">
+
+            <div class="grupo">
+                <strong>Python e Back-end</strong>
+                <ul>
+                    <li>Django e Flask para construir APIs e sistemas</li>
+                    <li>Orientação a objetos, tratamento de erros</li>
+                    <li>Scripts para automação e integração de dados</li>
+                </ul>
+            </div>
+
+            <div class="grupo">
+                <strong>RPA e Automação</strong>
+                <ul>
+                    <li>Robôs com Python (PyAutoGUI, Selenium)</li>
+                    <li>Mapeamento de processos manuais para automatizar</li>
+                    <li>Fluxos logísticos, reservas, avarias, inventário</li>
+                    <li>Conhecimento em UiPath em desenvolvimento</li>
+                </ul>
+            </div>
+
+            <div class="grupo">
+                <strong>Banco de Dados</strong>
+                <ul>
+                    <li>SQL (MySQL, SQLite)</li>
+                    <li>Modelagem simples e funcional</li>
+                </ul>
+            </div>
+
+            <div class="grupo">
+                <strong>Cloud e Infraestrutura</strong>
+                <ul>
+                    <li>AWS (EC2, S3, IAM)</li>
+                    <li>Linux, Windows Server, redes TCP/IP</li>
+                </ul>
+            </div>
+
+            <div class="grupo">
+                <strong>Suporte e Governança</strong>
+                <ul>
+                    <li>Suporte técnico (hardware e software)</li>
+                    <li>ERP (TOTVS, Oracle, Citrix)</li>
+                    <li>Segurança da informação e controles de acesso</li>
+                </ul>
+            </div>
+
+        </div>
+
+        <!-- ============================================================ -->
+        <!-- EXPERIÊNCIA -->
+        <!-- ============================================================ -->
+        <h2>▶ Onde trabalhei</h2>
+
+        <div class="experiencia-item">
+            <div class="cabecalho">
+                <span class="empresa">Indústrias Reunidas Raymundo da Fonte</span>
+                <span class="periodo">Nov/2019 – Atual</span>
+            </div>
+            <div class="cargo">Suporte Técnico Pleno · Horizonte-CE</div>
+            <ul>
+                <li>
+                    Desenvolvi alguns robôs em Python para automatizar tarefas repetitivas
+                    no ERP da empresa (TOTVS). O tempo de processamento caiu bastante
+                    – coisa de <strong>70%</strong> em alguns casos.
+                </li>
+                <li>
+                    Criei fluxos que integram Python, SQL e APIs para eliminar entrada
+                    manual de dados. Isso reduziu bastante os erros de digitação.
+                </li>
+                <li>
+                    Configurei servidores na AWS e Google Cloud para rodar esses robôs
+                    de forma agendada (cron jobs, Task Scheduler).
+                </li>
+                <li>
+                    Além disso, dou suporte a redes, telefonia PABX, CFTV e segurança
+                    da informação.
+                </li>
+            </ul>
+            <div class="destaque-rpa">
+                ▶ Um dos projetos mais legais foi automatizar o fluxo de motoristas
+                na portaria – saiu de um processo cheio de planilhas para um sistema
+                com dashboard em tempo real.
+            </div>
+        </div>
+
+        <div class="experiencia-item">
+            <div class="cabecalho">
+                <span class="empresa">JBS / Couros</span>
+                <span class="periodo">Mar/2010 – Set/2018</span>
+            </div>
+            <div class="cargo">Analista de TI · Cascavel-CE</div>
+            <ul>
+                <li>
+                    Criei scripts em Python para extrair e consolidar dados entre
+                    sistemas ERP (Oracle e TOTVS), automatizando relatórios que antes
+                    eram feitos na mão.
+                </li>
+                <li>
+                    Integrei sistemas usando APIs e consultas SQL mais elaboradas.
+                </li>
+                <li>
+                    Fazia consultas SQL para gerar relatórios gerenciais – joins,
+                    subqueries, window functions, esse tipo de coisa.
+                </li>
+                <li>
+                    Também dava suporte a redes, manutenção de equipamentos e servidores.
+                </li>
+            </ul>
+        </div>
+
+        <div style="margin-top: 6px; font-size: 14px; line-height: 1.8; color: #1e2a3a;">
+            <p><strong>📌 Experiências anteriores:</strong></p>
+            <ul style="list-style: none; padding-left: 0; display: flex; flex-wrap: wrap; gap: 2px 24px;">
+                <li style="padding-left: 16px; position: relative;">• Assistente de TI (Dez/2009 – Mar/2010)</li>
+                <li style="padding-left: 16px; position: relative;">• Auxiliar Administrativo TI (Out/2009 – Dez/2009)</li>
+                <li style="padding-left: 16px; position: relative;">• Programador de Produção (Jan/2009 – Out/2009)</li>
+                <li style="padding-left: 16px; position: relative;">• Aux. Programação Produção (Jul/2008 – Jan/2009)</li>
+                <li style="padding-left: 16px; position: relative;">• Auxiliar de PCP (Jul/2007 – Jul/2008)</li>
+            </ul>
+        </div>
+
+        <!-- ============================================================ -->
+        <!-- PROJETOS -->
+        <!-- ============================================================ -->
+        <h2>▶ Projetos que fiz</h2>
+        <div class="projetos-grid">
+
+            <div class="projeto-item">
+                <strong>Controle de Motoristas na Portaria</strong>
+                <p>
+                    <strong>O que fiz:</strong> Planejei e desenvolvi a lógica do sistema
+                    em Django (models, views, APIs). As consultas SQL para os dashboards
+                    e relatórios também foram por minha conta. O front foi feito com
+                    ajuda de IA para agilizar.
+                </p>
+                <p>
+                    <strong>Resultado:</strong> O tempo de liberação dos motoristas
+                    caiu bastante – uns <strong>80%</strong> – e os erros de registro
+                    praticamente sumiram.
+                </p>
+                <p class="tech">Stack: Python, Django, SQL, Bootstrap, Chart.js</p>
+                <p class="link-git">🔗 <a href="https://github.com/isaiasNsantos/motorista-control" target="_blank">Código no GitHub</a></p>
+            </div>
+
+            <div class="projeto-item">
+                <strong>Reserva de Salas para o RH</strong>
+                <p>
+                    <strong>O que fiz:</strong> Criei a lógica de agendamento, as regras
+                    de disponibilidade e a geração de relatórios. A IA deu uma mão na
+                    parte visual.
+                </p>
+                <p>
+                    <strong>Resultado:</strong> Acabaram os conflitos de reserva e o
+                    tempo gasto com agendamentos manuais caiu <strong>90%</strong>.
+                </p>
+                <p class="tech">Stack: Python, Django, SQL, Bootstrap, Chart.js</p>
+            </div>
+
+            <div class="projeto-item">
+                <strong>Controle de Avarias e Recuperações</strong>
+                <p>
+                    <strong>O que fiz:</strong> Desenvolvi a lógica de rastreamento
+                    de avarias, indicadores de eficiência e análise de tendências.
+                </p>
+                <p>
+                    <strong>Resultado:</strong> Rastreabilidade completa e relatórios
+                    automáticos que antes demoravam horas para ficarem prontos.
+                </p>
+                <p class="tech">Stack: Python, Django, SQL, Bootstrap, Chart.js</p>
+            </div>
+
+            <div class="projeto-item">
+                <strong>Dashboard Avançado - T1 Central / CAPEX / Service Desk</strong>
+                <p>
+                    <strong>O que fiz:</strong> Desenvolvi um dashboard para controle
+                    de inventário, chamados e CAPEX, integrando dados de equipamentos,
+                    orçamentos e suporte técnico em um só lugar.
+                </p>
+                <p>
+                    <strong>Resultado:</strong> Acompanhamento em tempo real do status
+                    de equipamentos e chamados, com gráficos e filtros para facilitar
+                    a tomada de decisão.
+                </p>
+                <p class="tech">Stack: Python, Django, SQL, Bootstrap, Chart.js, QR Code</p>
+            </div>
+
+        </div>
+
+        <!-- ============================================================ -->
+        <!-- FORMAÇÃO -->
+        <!-- ============================================================ -->
+        <h2>▶ Formação e Cursos</h2>
+        <div class="formacao-grid">
+
+            <div class="bloco">
+                <strong>Graduação</strong>
+                <ul>
+                    <li>Tecnologia em Segurança da Informação</li>
+                </ul>
+            </div>
+
+            <div class="bloco">
+                <strong>Cloud</strong>
+                <ul>
+                    <li>AWS Developer Associate <span class="curso-tag">2021</span></li>
+                    <li>AWS para Iniciantes <span class="curso-tag">2021</span></li>
+                </ul>
+            </div>
+
+            <div class="bloco">
+                <strong>Python</strong>
+                <ul>
+                    <li>Programação Python do Zero ao Avançado <span class="curso-tag">Udemy 2024</span></li>
+                    <li>Python 3 do Básico ao Avançado <span class="curso-tag">Udemy 2024</span></li>
+                    <li>Orientação a Objetos com Python <span class="curso-tag">Alura 2024</span></li>
+                    <li>Consumo de APIs com Python <span class="curso-tag">Alura 2024</span></li>
+                </ul>
+            </div>
+
+            <div class="bloco">
+                <strong>SQL</strong>
+                <ul>
+                    <li>SQL com MySQL – Manipulação e Consultas <span class="curso-tag">Alura 2024</span></li>
+                </ul>
+            </div>
+
+            <div class="bloco">
+                <strong>Linux e Infra</strong>
+                <ul>
+                    <li>Linux Academy <span class="curso-tag">2020</span></li>
+                    <li>Windows Server 2008 <span class="curso-tag">CEPEP 2010-2011</span></li>
+                    <li>Redes e Wireless <span class="curso-tag">CEPEP 2010</span></li>
+                    <li>Hardware <span class="curso-tag">CEPEP 2007</span></li>
+                </ul>
+            </div>
+
+        </div>
+
+        <!-- ============================================================ -->
+        <!-- RODAPÉ -->
+        <!-- ============================================================ -->
+        <div style="margin-top: 34px; padding-top: 16px; border-top: 1px solid #dce3ed; font-size: 13px; color: #4a5f7a; display: flex; flex-wrap: wrap; justify-content: space-between;">
+            <span>▶ Python · Django · SQL · AWS · RPA</span>
+            <span>📅 Setembro 2026</span>
+        </div>
+
+    </div>
+
+</body>
+</html>
